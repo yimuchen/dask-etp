@@ -3,20 +3,19 @@ requires = ["hatchling>=1.17.1", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
-name = "dask-etp"
+name = "dask_etp"
 authors = [{ name = "Yi-Mu Chen", email = "yi-mu.chen@kit.edu" }]
-dependencies = [
-]
+dependencies = []
 dynamic = ["version"]
 
 ### The following is for the construction of the package using hatchling
 [tool.hatch.version]
 source = "vcs"
-path = "src/__init__.py"
+path = "src/dask_etp/__init__.py"
 
 [tool.hatch.build.hooks.vcs]
-version-file = "src/dask-etp/version.py"
+version-file = "src/dask_etp/version.py"
 
 [tool.setuptools_scm]
-write_to = "src/dask-etp/_version.py"
+write_to = "src/dask_etp/_version.py"
 

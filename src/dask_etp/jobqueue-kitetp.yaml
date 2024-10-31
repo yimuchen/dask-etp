@@ -1,0 +1,31 @@
+jobqueue:
+  kitetp:
+    name: dask-worker
+    # default JobBatchName
+    batch-name: dask-worker
+
+    # Default job resource requests
+    cores: 1
+    gpus: null
+    memory: "2 GiB"
+    processes: 1
+
+    # Configurations for how to set up the worker session
+    python: "python" # Path to python executable
+    worker-command: "distributed.cli.dask_worker" # Command to launch a worker
+    worker_extra_args: ["--worker-port 10000:10100"]
+    death-timeout: 60
+    local-directory: "/tmp/"
+
+    #  HTCondor Resource options
+    disk: "200MB"
+    extra: []
+    env_extra: []
+    job_extra: {}
+    log-directory: null
+    job_extra_directives: {}
+    scheduler-options: {}
+    shebang: "#!/usr/bin/env bash"
+    interface: null
+    shared_temp_directory: null
+    job_script_prologue: []
